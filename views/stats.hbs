@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Web Analyst</title>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/dataTables.css" rel="stylesheet">
+    <style type="text/css">
+        body {
+            padding: 30px;
+            font-size: 12px
+        }
+    </style>
+
+    <style>
+        .stats-main-container {
+            margin-top: 8rem
+        }
+        
+        .pie {
+            height: 350px;
+            width: 350px;
+            margin: auto;
+        }
+    </style>
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/dataTables.js"></script>
+
+</head>
+
+<body>
+
+    <div class="navbar-wrapper">
+        <div class="container">
+
+            <nav class="navbar navbar-inverse  navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed"
+                            type="button">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                        <a href="#" class="navbar-brand">Web-Analyst</a>
+                        <a href="?logout=yes" class="navbar-brand">Logout</a>
+                    </div>
+                </div>
+            </nav>
+
+        </div>
+    </div>
+
+    <div class="container stats-main-container">
+
+
+
+
+
+
+        <div class="row featurette">
+            <div class="col-md-8">
+                <canvas id="weekChartVisitors"></canvas>
+            </div>
+            <div class="col-md-4">
+                <h2 class="featurette-heading">Unique visitors per day</h2>
+                <p class="lead"></p>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-8">
+                <canvas id="yearChartVisitors"></canvas>
+            </div>
+            <div class="col-md-4">
+                <h2 class="featurette-heading">Unique visitors per month</h2>
+                <p class="lead"></p>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-8">
+                <canvas id="progressVisitors"></canvas>
+            </div>
+            <div class="col-md-4">
+                <h2 class="featurette-heading">Unique visitors progression</h2>
+                <p class="lead"></p>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-8">
+                <div class="pie">
+                <canvas id="browserPopularity"></canvas>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h2 class="featurette-heading">Browser popularity <span class="text-muted"></span></h2>
+                <p class="lead"></p>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+
+        <div class="row featurette">
+            <div class="col-md-8">
+                <div class="pie">
+                <canvas id="osPopularity"></canvas>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h2 class="featurette-heading">O.S. popularity <span class="text-muted"></span></h2>
+                <p class="lead"></p>
+            </div>
+        </div>
+
+
+        <hr class="featurette-divider">
+
+
+        <div class="row featurette">
+            <div class="col-md-8">
+                <div class="pie">
+                <canvas id="langPopularity"></canvas>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h2 class="featurette-heading">Languages<span class="text-muted"></span></h2>
+                <p class="lead"></p>
+            </div>
+        </div>
+
+
+
+        <hr class="featurette-divider">
+
+
+        <div class="row featurette">
+            <div class="col-md-8">
+                <div class="pie">
+                <canvas id="routePopularity"></canvas>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h2 class="featurette-heading">Popular routes <span class="text-muted"></span></h2>
+                <p class="lead"></p>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+
+        <div class="row featurette">
+            <div class="col-md-12">
+                <h2 class="featurette-heading">Referers <span class="text-muted"></span></h2>
+                <p class="lead"></p>
+
+                <table id="table-referrers" class="table table-striped table-bordered" cellspacing="0" role="grid">
+                    <thead>
+                        <tr role="row">
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 96px;">Referrer</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 105px;">Frequency</th>
+                        </tr>
+                    </thead>
+                </table>
+
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+
+        <div class="row featurette">
+            <div class="col-md-12">
+                <h2 class="featurette-heading">Popular keywords on website <span class="text-muted"></span></h2>
+                <p class="lead"></p>
+
+                <table id="table-keywords" class="table table-striped table-bordered" cellspacing="0" role="grid">
+                    <thead>
+                        <tr role="row">
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 96px;">Keywords</th>
+                            <th class="sorting_disabled" rowspan="1" colspan="1" style="width: 105px;">Frequency</th>
+                        </tr>
+                    </thead>
+                </table>
+
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <footer>
+            <p class="pull-right"><a href="#">Back to top</a></p>
+            <p><a href="#">Website Analyst</a></p>
+        </footer>
+    </div>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/Chart.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
