@@ -8,12 +8,12 @@ Website Analyst is a simple back-end visitor tracking/analytics system. The conc
     var webAnalyst = require('./lib/website-analyst');
     var dataDir = path.resolve(__dirname, 'data');
     webAnalyst.init({
-    //ignoreIPs: ['192.168.x.x'],
+    ignoreIPs: ['192.168.x.x'],
     ignoreRoutes: ['/stats', 'favicon'],
     ignoreExtensions: ['.css', '.js'],
     dataDir: dataDir,
-    debugMode: true,
-    testMode: true
+    debugMode: false,
+    testMode: false
     });
 
     app.use(cookieParser());
