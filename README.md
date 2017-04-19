@@ -4,16 +4,16 @@ Website Analyst is a simple back-end visitor tracking/analytics system. The conc
 
 
 ## Usage
-
+    ```javascript
     var webAnalyst = require('./lib/website-analyst');
     var dataDir = path.resolve(__dirname, 'data');
     webAnalyst.init({
-    ignoreIPs: ['192.168.x.x'],
-    ignoreRoutes: ['/stats', 'favicon'],
-    ignoreExtensions: ['.css', '.js'],
-    dataDir: dataDir,
-    debugMode: false,
-    testMode: false
+        ignoreIPs: ['192.168.x.x'],
+        ignoreRoutes: ['/stats', 'favicon'],
+        ignoreExtensions: ['.css', '.js'],
+        dataDir: dataDir,
+        debugMode: false,
+        testMode: false
     });
 
     app.use(cookieParser());
@@ -30,12 +30,14 @@ Website Analyst is a simple back-end visitor tracking/analytics system. The conc
 
     // Start the engine
     app.use(webAnalyst.track());
+    ```
 
 ## Usage with authentication page
 
     To protect access to your page, the process is slightly different.
     You would need to load a session manager (In this example cookie-session is used).
     
+    ```javascript
     var cookieSession = require('cookie-session');
     app.use(cookieSession({
         name: 'session',
@@ -62,7 +64,7 @@ Website Analyst is a simple back-end visitor tracking/analytics system. The conc
 
     // Set route
     app.all('/stats', webAnalyst.check(), webAnalyst.render());
-      
+    ```  
 
 ## License
 
