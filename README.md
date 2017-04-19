@@ -34,8 +34,8 @@ Website Analyst is a simple back-end visitor tracking/analytics system. The conc
 
 ## Usage with authentication page
 
-    To protect access to your page, the process is slightly different.
-    You would need to load a session manager (In this example cookie-session is used).
+To protect access to your page, the process is slightly different.
+You would need to load a session manager (In this example cookie-session is used).
     
 ```javascript
     var cookieSession = require('cookie-session');
